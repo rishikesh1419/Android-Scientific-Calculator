@@ -33,4 +33,114 @@
         android:textColorHint="@color/colorTextonSecondary"
         android:textSize="30sp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="5"
+        android:background="@color/colorSecondaryLite"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="log"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textColor="@color/colorTextonSecondary"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="ln"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textColor="@color/colorTextonSecondary"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="x^n"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textColor="@color/colorTextonSecondary"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="rt"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textColor="@color/colorTextonSecondary"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="!"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textColor="@color/colorTextonSecondary"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="5"
+        android:gravity="center"
+        android:background="@color/colorSecondaryLite"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="sin"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textColor="@color/colorTextonSecondary"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="cos"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textColor="@color/colorTextonSecondary"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="tan"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textColor="@color/colorTextonSecondary"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+    </LinearLayout>
 </LinearLayout>
