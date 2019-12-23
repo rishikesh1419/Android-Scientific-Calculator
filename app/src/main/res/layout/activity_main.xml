@@ -113,6 +113,17 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="%"
+            android:onClick="btnClick_mod"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            android:textColor="@color/colorTextonSecondary"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:text="sin"
             android:onClick="btnClick_sin"
             android:textAllCaps="false"
@@ -295,6 +306,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:background="@drawable/btn_background"
                     android:text="1"
+                    android:onClick="btnClick_1"
                     android:textColor="@color/colorTextonPrimary"
                     android:textSize="30sp"/>
 
@@ -305,6 +317,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:background="@drawable/btn_background"
                     android:text="2"
+                    android:onClick="btnClick_2"
                     android:textColor="@color/colorTextonPrimary"
                     android:textSize="30sp"/>
 
@@ -315,6 +328,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:background="@drawable/btn_background"
                     android:text="3"
+                    android:onClick="btnClick_3"
                     android:textColor="@color/colorTextonPrimary"
                     android:textSize="30sp"/>
 
@@ -325,6 +339,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:background="@drawable/btn_background"
                     android:text="×"
+                    android:onClick="btnClick_multiply"
                     android:textColor="@color/colorSecondaryLite"
                     android:textSize="30sp"/>
             </LinearLayout>
@@ -349,6 +364,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:background="@drawable/btn_background"
                     android:text="0"
+                    android:onClick="btnClick_0"
                     android:textColor="@color/colorTextonPrimary"
                     android:textSize="30sp"/>
 
@@ -359,6 +375,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:background="@drawable/btn_background"
                     android:text="."
+                    android:onClick="btnClick_point"
                     android:textColor="@color/colorTextonPrimary"
                     android:textSize="30sp"/>
 
@@ -369,6 +386,7 @@
                     style="@style/Widget.AppCompat.Button.Borderless"
                     android:background="@drawable/btn_background"
                     android:text="÷"
+                    android:onClick="btnClick_divide"
                     android:textColor="@color/colorSecondaryLite"
                     android:textSize="30sp"/>
             </LinearLayout>
@@ -388,6 +406,7 @@
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:background="@drawable/btn_background"
                 android:text="="
+                android:onClick="btnClick_equals"
                 android:textColor="@color/colorTextonPrimary"
                 android:textSize="30sp"/>
         </LinearLayout>

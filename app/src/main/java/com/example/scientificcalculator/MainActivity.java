@@ -10,9 +10,9 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     TextView input, signBox;
-    String sign, value1, value2;
+    String sign, value1, value2, specialFunction;
     Double num1, num2, result;
-    boolean hasDot;
+    boolean hasDot, hasSpecFunc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         input = findViewById(R.id.input);
         signBox = findViewById(R.id.sign);
 
+        hasDot = false;
+        hasSpecFunc = false;
     }
 
     @SuppressLint("SetTextI18n")
@@ -74,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressLint("SetTextI18n")
-    public void btnClick_dot(View view) {
+    public void btnClick_point(View view) {
         if (!hasDot) {
             if (input.getText().equals("")) {
 
@@ -123,73 +125,175 @@ public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     public void btnClick_log(View view) {
-        sign = "log";
+        specialFunction = "log";
+        hasSpecFunc = true;
         input.setText(null);
         signBox.setText("log");
         hasDot = false;
     }
-
     @SuppressLint("SetTextI18n")
     public void btnClick_ln(View view) {
-        sign = "ln";
+        specialFunction = "ln";
+        hasSpecFunc = true;
         input.setText(null);
         signBox.setText("ln");
         hasDot = false;
     }
 
+    @SuppressLint("SetTextI18n")
     public void btnClick_exponent(View view) {
-        sign = "power";
         value1 = input.getText().toString();
+        specialFunction = "exponent";
+        hasSpecFunc = true;
         input.setText(null);
-        hasDot = false;
         signBox.setText("xⁿ");
+        hasDot = false;
     }
 
-    public void btnClick_fact(View view) {
-        sign = "factorial";
+    @SuppressLint("SetTextI18n")
+    public void btnClick_root(View view) {
+        specialFunction = "root";
+        hasSpecFunc = true;
         input.setText(null);
+        signBox.setText("√");
         hasDot = false;
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void btnClick_fact(View view) {
+        specialFunction = "fact";
+        hasSpecFunc = true;
+        input.setText(null);
         signBox.setText("!");
+        hasDot = false;
+    }
+
+    public void btnClick_mod(View view) {
+        value1 = input.getText().toString();
+        specialFunction = "mod";
+        hasSpecFunc = true;
+        input.setText(null);
+        signBox.setText("%");
+        hasDot = false;
     }
 
     @SuppressLint("SetTextI18n")
     public void btnClick_sin(View view) {
-        sign = "sin";
+        specialFunction = "sin";
+        hasSpecFunc = true;
         input.setText(null);
-        hasDot = false;
         signBox.setText("sin");
+        hasDot = false;
     }
 
     @SuppressLint("SetTextI18n")
     public void btnClick_cos(View view) {
-        sign = "cos";
+        specialFunction = "cos";
+        hasSpecFunc = true;
         input.setText(null);
-        hasDot = false;
         signBox.setText("cos");
+        hasDot = false;
     }
 
     @SuppressLint("SetTextI18n")
     public void btnClick_tan(View view) {
-        sign = "tan";
+        specialFunction = "tan";
+        hasSpecFunc = true;
         input.setText(null);
-        hasDot = false;
         signBox.setText("tan");
-    }
-
-    public void btnClick_root(View view) {
-        sign = "root";
-        input.setText(null);
         hasDot = false;
-        signBox.setText("√");
     }
 
     @SuppressLint("SetTextI18n")
-    public void btnClick_equal(View view) {
-        if (sign == null) {
+    public void btnClick_equals(View view) {
+        if (( specialFunction == null && sign == null) || input.getText().equals("")) {
             signBox.setText("Error!");
-        } else if (input.getText().equals("")) {
-            signBox.setText("Error!");
-        } else if ((sign.equals("+") || sign.equals("-") || sign.equals("*") || sign.equals("/")) && value1.equals("")) {
+        }
+        else if(specialFunction != null){
+            switch (specialFunction){
+                default:
+                    break;
+                case "log" :
+                    value1 = input.getText().toString();
+                    num1 = Double.parseDouble(value1);
+                    input.setText(Math.log10(num1) + "");
+                    specialFunction = null;
+                    hasSpecFunc = false;
+                    signBox.setText(null);
+                    break;
+                case "ln" :
+                    value1 = input.getText().toString();
+                    num1 = Double.parseDouble(value1);
+                    input.setText(Math.log(num1) + "");
+                    specialFunction = null;
+                    hasSpecFunc = false;
+                    signBox.setText(null);
+                    break;
+                case "exponent" :
+                    num1 = Double.parseDouble(value1);
+                    value2 = input.getText().toString();
+                    num2 = Double.parseDouble(value2);
+                    input.setText(Math.pow(num1,num2) + "");
+                    specialFunction = null;
+                    hasSpecFunc = false;
+                    signBox.setText(null);
+                    break;
+                case "root" :
+                    value1 = input.getText().toString();
+                    num1 = Double.parseDouble(value1);
+                    input.setText(Math.sqrt(num1) + "");
+                    specialFunction = null;
+                    hasSpecFunc = false;
+                    signBox.setText(null);
+                    break;
+                case "fact" :
+                    value1 = input.getText().toString();
+                    num1 = Double.parseDouble(value1);
+                    int i = Integer.parseInt(value1) - 1 ;
+                    while(i>0){
+                        num1 = num1*i;
+                        i--;
+                    }
+                    specialFunction = null;
+                    hasSpecFunc = false;
+                    signBox.setText(null);
+                    break;
+                case "mod" :
+                    num1 = Double.parseDouble(value1);
+                    value2 = input.getText().toString();
+                    num2 = Double.parseDouble(value2);
+                    input.setText(String.valueOf(num1%num2) );
+                    specialFunction = null;
+                    hasSpecFunc = false;
+                    signBox.setText(null);
+                    break;
+                case "sin" :
+                    value1 = input.getText().toString();
+                    num1 = Double.parseDouble(value1);
+                    input.setText(Math.sin(num1) + "");
+                    specialFunction = null;
+                    hasSpecFunc = false;
+                    signBox.setText(null);
+                    break;
+                case "cos" :
+                    value1 = input.getText().toString();
+                    num1 = Double.parseDouble(value1);
+                    input.setText(Math.cos(num1) + "");
+                    specialFunction = null;
+                    hasSpecFunc = false;
+                    signBox.setText(null);
+                    break;
+                case "tan" :
+                    value1 = input.getText().toString();
+                    num1 = Double.parseDouble(value1);
+                    input.setText(Math.tan(num1) + "");
+                    specialFunction = null;
+                    hasSpecFunc = false;
+                    signBox.setText(null);
+                    break;
+            }
+        }
+        else if ((sign.equals("+") || sign.equals("-") || sign.equals("*") || sign.equals("/")) && value1.equals("")) {
             signBox.setText("Error!");
         } else {
             switch (sign) {
