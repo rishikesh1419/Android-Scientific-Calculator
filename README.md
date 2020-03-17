@@ -11,4 +11,4 @@
 
 ### Screenshot
 
-![screenshot](images/screenshot.jpg)
+<img src="https://raw.githubusercontent.com/rishikesh1419/Android-Scientific-Calculator/master/images/screenshot.jpg" class="shrinkToFit" width="231" height="389">
